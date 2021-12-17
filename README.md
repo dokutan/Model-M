@@ -1,6 +1,13 @@
-There are just about 10 files since there are only about 10 different key types on the (my) keyboard, two of which (the standard keys and the wide modifier keys) have exchangeable key caps (which are also included as .scad files) .Currently you should be able to export the keycaps without problems. The unit mapping (scad-to-reallife) is 1:=1mm.
+# Model M keys and keycaps
 
-LICENSE
-=======
+This is forked from https://github.com/jaseg/Model-M, i modified the keycaps because they were not working on my keyboard:
+
+- increased the clip size on the keycaps
+- added a 1.25 u keycap
+
+## LICENSE
 ©2013 by Sebastian Götte <github@jaseg.net>
+
+©2021 by dokutan
+
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/deed.en_US).

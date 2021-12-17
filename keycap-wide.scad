@@ -11,7 +11,7 @@ H=12.75;
 CYL_OFF_Z=100;
 CYL_DEPTH=0.05;
 CLIP_X=2;
-CLIP_Y=0.75;
+CLIP_Y=1.25;
 CLIP_H=3*CLIP_Y;
 CLIP_DISTANCE=17.0;
 CORNER_RADIUS=2;
@@ -61,7 +61,8 @@ module struts(){
 module clip(){
 	difference(){
 		cube([CLIP_X,CLIP_Y,CLIP_H]);
-		translate([0,CLIP_Y,0]) rotate(a=asin(CLIP_Y/CLIP_H),v=[1,0,0]) cube([100,100,100]);
+		translate([-1,CLIP_Y,0]) rotate(a=asin(CLIP_Y/CLIP_H),v=[1,0,0]) cube([100,100,100]);
+        rotate(a=gamma, v=[1, 0, 0]) translate([-1, 0, WallThickness]) cube([100, 100, 100]);
 	}
 }
 

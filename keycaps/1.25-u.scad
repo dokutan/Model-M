@@ -1,13 +1,13 @@
 //measures are in millimeters
-AY=27.0;
+AY=23.0;
 AX=19.0;
 INNER_AY=18.5;
 INNER_BY=12.5;
-BY=22.0;
+BY=18.0;
 BLX=14.5;
 EZ=11.0;
 FLZ=14.0;
-H=12.75;
+H=12.72;
 CYL_OFF_Z=100;
 CYL_DEPTH=0.05;
 CLIP_X=2;
@@ -61,9 +61,9 @@ module struts(){
 module clip(){
 	difference(){
 		cube([CLIP_X,CLIP_Y,CLIP_H]);
-		translate([-1,CLIP_Y,0]) rotate(a=asin(CLIP_Y/CLIP_H),v=[1,0,0]) cube([100,100,100]);
-        rotate(a=gamma, v=[1, 0, 0]) translate([-1, 0, WallThickness]) cube([100, 100, 100]);
-	}
+        translate([-1,CLIP_Y,0]) rotate(a=asin(CLIP_Y/CLIP_H),v=[1,0,0]) cube([100,100,100]);
+        rotate(a=gamma, v=[1, 0, 0]) translate([-1, 0, WallThickness-0.1]) cube([100, 100, 100]);
+    }
 }
 
 //clip distance control rod

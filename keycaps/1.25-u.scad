@@ -15,16 +15,7 @@ CLIP_Y=1.25;
 CLIP_H=3*CLIP_Y;
 CLIP_DISTANCE=17.0;
 CORNER_RADIUS=2;
-
 WallThickness=0.75;
-ClipWidth=2.2;
-ClipDepth=0.75;
-
-//ascfront=FLZ/sqrt(pow(FLZ,2)-pow(H,2));
-//asctop=(H-EZ)/sqrt(pow(BLX,2)-pow((H-EZ),2));
-
-//curve control rod
-//translate([14,4,0]) cube([1,1,H]);
 
 alpha=asin((H-EZ)/BLX);
 beta=asin(H/FLZ);
@@ -43,7 +34,6 @@ module keycap(){
 			translate([AX,0,0]) rotate(a=beta-90,v=[0,1,0]) cube([100,100,100]);
 		}
 		cylinder(h=0.01,r=CORNER_RADIUS,$fs=0.6);
-		//rotate(a=90,v=[1,0,0]) cylinder(h=0.01,r=1,$fs=0.3);
 	}
 }
 
@@ -66,8 +56,6 @@ module clip(){
     }
 }
 
-//clip distance control rod
-//translate([(AX-CLIP_X)/2,(AY-CLIP_DISTANCE)/2,0]) cube([1,CLIP_DISTANCE,1]);
 translate([(AX-CLIP_X)/2,(AY-CLIP_DISTANCE)/2,0]) clip();
 translate([(AX-CLIP_X)/2,(AY+CLIP_DISTANCE)/2,0]) mirror([0,1,0]) clip();
 
@@ -79,7 +67,5 @@ difference(){
 			struts();
 			translate([WallThickness, WallThickness, 0]) scale(v=[1-2*WallThickness/AX, 1-2*WallThickness/INNER_AY, 1-WallThickness/H]) struts();
 		}
-		//translate([0,(AY-CLIP_DISTANCE)/2-WallThickness,0]) cube([100,WallThickness, 100]);
-		//translate([0,(AY+CLIP_DISTANCE)/2,0]) cube([100,WallThickness, 100]);
 	}
 }

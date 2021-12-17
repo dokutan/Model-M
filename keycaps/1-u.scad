@@ -12,13 +12,7 @@ CLIP_X=2;
 CLIP_Y=1.25;
 CLIP_H=3*CLIP_Y;
 CORNER_RADIUS=2;
-
 WallThickness=0.75;
-ClipWidth=2.2;
-ClipDepth=0.75;
-
-//ascfront=FLZ/sqrt(pow(FLZ,2)-pow(H,2));
-//asctop=(H-EZ)/sqrt(pow(BLX,2)-pow((H-EZ),2));
 
 alpha=asin((H-EZ)/BLX);
 beta=asin(H/FLZ);
@@ -37,7 +31,6 @@ module keycap(){
 			translate([AX,0,0]) rotate(a=beta-90,v=[0,1,0]) cube([100,100,100]);
 		}
 		cylinder(h=0.01,r=CORNER_RADIUS,$fs=0.6);
-		//rotate(a=90,v=[1,0,0]) cylinder(h=0.01,r=1,$fs=0.3);
 	}
 }
 
